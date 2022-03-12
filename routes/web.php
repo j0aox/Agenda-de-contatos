@@ -15,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ContatoController::class, 'index']);
+Route::get('/listar', [ContatoController::class, 'show']);
+Route::get('/create', [ContatoController::class, 'create']);
+
+Route::post('/create', [ContatoController::class, 'store']);
+
+Route::post('/listar/{id}', [ContatoController::class, 'destroy']);

@@ -14,10 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Rota inicial do sistema
 Route::get('/', [ContatoController::class, 'index']);
+// Rota que lista os contatos
 Route::get('/listar', [ContatoController::class, 'show']);
+// Rota de criação do contato
 Route::get('/create', [ContatoController::class, 'create']);
-
+// Rota que salva as informações 
 Route::post('/create', [ContatoController::class, 'store']);
-
-Route::post('/listar/{id}', [ContatoController::class, 'destroy']);
+// Rota que deleta as informações
+Route::post('/deletar/{id}', [ContatoController::class, 'destroy']);
+// Rota de editar os dados
+Route::get('/edit/{id}', [ContatoController::class, 'edit']);
+// Rota que salva as informações
+Route::post('/edit/{id}', [ContatoController::class, 'update']);

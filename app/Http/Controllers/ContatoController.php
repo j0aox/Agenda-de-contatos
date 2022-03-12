@@ -29,8 +29,6 @@ class ContatoController extends Controller
 
         $dados = Contato::create($dados);
 
-        //var_dump($dados);exit;
-
         return redirect('listar');
     }
 
@@ -45,12 +43,25 @@ class ContatoController extends Controller
 
     public function edit($id)
     {
-        //
+        $dados = Contato::findOrFail($id);
+        //var_dump($dados);exit;
+        return view('edit', [
+            'dado' => $dados
+        ]);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $dados = Contato::find($id);
+
+        $getEndereco = file_get_contents('https://viacep.com.br/ws/'.$request->input('cep').'/json/');
+        $endereco =  json_decode($getEndereco, true);
+        $request->merge(['endereco' => $endereco['localidade'].','.$endereco['bairro'].','.$endereco['uf']]);
+
+        $dado = $request->all();
+        $dados->update($dado);
+
+        return redirect('listar');
     }
 
     public function destroy($id)

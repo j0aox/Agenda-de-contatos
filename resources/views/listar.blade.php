@@ -36,20 +36,34 @@
         </nav>
     </header>
 
+    <br>
+    <br>
+    <br>
+
     <main class="flex-shrink-0">
 
-        <div class="container">
-            <div class="px-4 py-5 my-5 text-center">
+        <ul class="list-group">
+            @foreach($dados as $dado)
+            <li class="list-group-item d-flex justify-content-between">
 
-                <h1 class="display-5 fw-bold"> Agenda </h1>
-                <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Sistema Gerenciador de Contatos. Veja a listagem de contatos, cadastre novos contatos.</p>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <a href="{{ url('/listar') }}" class="btn btn-primary btn-lg px-4 gap-3">Contatos</a>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- fim div class container -->
+                Nome: <td scope="row">{{ $dado['nome'] }}</th> <br>
+                    Telefone:
+                <td scope="row">{{ $dado['telefone'] }}</th> <br>
+                    E-mail:
+                <td scope="row">{{ $dado['email'] }}</th> <br>
+                    Endereço:
+                <td scope="row">{{ $dado['endereco'] }}</th> <br>
+                    <span>
+                        <a href="" class="btn btn-warning btn-sm">Atualizar</a> <br>
+                        <form action="{{ url('/listar'.'/'. $dado->id) }}" accept-charset="UTF-8" style="display:inline" method="POST">
+                            @csrf 
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(&quot;Confirm delete?&quot;) title="Delete">Delete</button>
+                    
+                    </span>
+
+            </li>
+            @endforeach
+        </ul>
 
     </main>
 

@@ -36,28 +36,36 @@
         </nav>
     </header>
 
-    <main class="flex-shrink-0">
+    <br>
 
-        <div class="container">
-            <div class="px-4 py-5 my-5 text-center">
-
-                <h1 class="display-5 fw-bold"> Agenda </h1>
-                <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Sistema Gerenciador de Contatos. Veja a listagem de contatos, cadastre novos contatos.</p>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <a href="{{ url('/listar') }}" class="btn btn-primary btn-lg px-4 gap-3">Contatos</a>
-                    </div>
-                </div>
+    <div class="container mt-5">
+        <form action="{{ url('/create') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" require>
             </div>
-        </div> <!-- fim div class container -->
 
-    </main>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" id="email" name="email" require>
+            </div>
 
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <span class="text-muted">Produzido por João Amador</span>
-        </div>
-    </footer>
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="telefone" name="telefone" require>
+            </div>
+
+            <div class="mb-3">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="cep" name="cep" require>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary" id="btnSalvar">Salvar</button>
+            </div>
+        </form>
+    </div>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

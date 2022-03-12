@@ -42,28 +42,28 @@
 
     <main class="flex-shrink-0">
 
-        <ul class="list-group">
-            @foreach($dados as $dado)
-            <li class="list-group-item d-flex justify-content-between">
-
-                Nome: <td scope="row">{{ $dado['nome'] }}</th> <br>
-                    Telefone:
-                <td scope="row">{{ $dado['telefone'] }}</th> <br>
-                    E-mail:
-                <td scope="row">{{ $dado['email'] }}</th> <br>
-                    Endereço:
-                <td scope="row">{{ $dado['endereco'] }}</th> <br>
-                    <span>
-                        <a href="" class="btn btn-warning btn-sm">Atualizar</a> <br>
-                        <form action="{{ url('/listar'.'/'. $dado->id) }}" accept-charset="UTF-8" style="display:inline" method="POST">
-                            @csrf 
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(&quot;Confirm delete?&quot;) title="Delete">Delete</button>
-                    
-                    </span>
-
-            </li>
-            @endforeach
-        </ul>
+        <div class="container">
+            <a href="/create" class="btn btn-primary mb-3">Novo Contato</a>
+            <ul class="list-group">
+                @foreach($dados as $dado)
+                <li class="list-group-item d-flex justify-content-between">
+                    Nome: <td scope="row">{{ $dado['nome'] }}</th>
+                        Telefone:
+                    <td scope="row">{{ $dado['telefone'] }}</th>
+                        E-mail:
+                    <td scope="row">{{ $dado['email'] }}</th>
+                        Endereço:
+                    <td scope="row">{{ $dado['endereco'] }}</th>
+                        <span>
+                            <a href="{{ url('/edit/'. $dado->id) }}" class="btn btn-warning btn-sm">Atualizar</a>
+                            <form action="{{ url('/deletar/' . $dado->id) }}" accept-charset="UTF-8" style="display:inline" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-sm" title="Delete">Delete</button>
+                        </span>
+                </li>
+                @endforeach
+            </ul>
+        </div>
 
     </main>
 

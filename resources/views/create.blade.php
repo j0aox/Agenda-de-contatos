@@ -43,22 +43,22 @@
             @csrf
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" require>
+                <input type="text" class="form-control" id="nome" name="nome" required>
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" id="email" name="email" require>
+                <input type="text" class="form-control" id="email" name="email" required>
             </div>
 
             <div class="mb-3">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="telefone" name="telefone" require>
+                <input type="text" class="form-control" id="telefone" name="telefone" required>
             </div>
 
             <div class="mb-3">
                 <label for="cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep" name="cep" require>
+                <input type="text" class="form-control" id="cep" name="cep" required>
             </div>
 
             <div class="mb-3">

@@ -41,30 +41,42 @@
     <br>
 
     <main class="flex-shrink-0">
-
         <div class="container">
             <a href="/create" class="btn btn-primary mb-3">Novo Contato</a>
-            <ul class="list-group">
-                @foreach($dados as $dado)
-                <li class="list-group-item d-flex justify-content-between">
-                    Nome: <td scope="row">{{ $dado['nome'] }}</th>
-                        Telefone:
-                    <td scope="row">{{ $dado['telefone'] }}</th>
-                        E-mail:
-                    <td scope="row">{{ $dado['email'] }}</th>
-                        Endereço:
-                    <td scope="row">{{ $dado['endereco'] }}</th>
-                        <span>
-                            <a href="{{ url('/edit/'. $dado->id) }}" class="btn btn-warning btn-sm">Atualizar</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Endereço</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($dados as $dado)
+                    <tr>
+                        <td>{{ $dado['nome'] }}</td>
+                        <td>{{ $dado['telefone'] }}</td>
+                        <td>{{ $dado['email'] }}</td>
+                        <td>{{ $dado['endereco'] }}</td>
+                        <td>
+                            <span>
+                                <a href="{{ url('/edit/'. $dado->id) }}" class="btn btn-warning btn-sm">Atualizar</a>
+                            </span>
+                        </td>
+                        <td>
                             <form action="{{ url('/deletar/' . $dado->id) }}" accept-charset="UTF-8" style="display:inline" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete">Delete</button>
-                        </span>
-                </li>
-                @endforeach
-            </ul>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-
     </main>
 
     <footer class="footer mt-auto py-3 bg-light">

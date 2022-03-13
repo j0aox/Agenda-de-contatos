@@ -43,22 +43,22 @@
             @csrf
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" value="{{ $dado->nome }}" require>
+                <input type="text" class="form-control" id="nome" name="nome" value="{{ $dado->nome }}" required>
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" id="email" name="email" value="{{ $dado->email }}" require>
+                <input type="text" class="form-control" id="email" name="email" value="{{ $dado->email }}" required>
             </div>
 
             <div class="mb-3">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="telefone" name="telefone" value="{{ $dado->telefone }}" require>
+                <input type="text" class="form-control" id="telefone" name="telefone" value="{{ $dado->telefone }}" required>
             </div>
 
             <div class="mb-3">
                 <label for="cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep" name="cep" value="{{ $dado->endereco }}" placeholder="Digite o número do CEP" require>
+                <input type="text" class="form-control" id="cep" name="cep" value="{{ $dado->endereco }}" placeholder="Digite o número do CEP" required>
             </div>
 
             <div class="mb-3">

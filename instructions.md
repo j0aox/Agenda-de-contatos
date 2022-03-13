@@ -23,7 +23,7 @@ Clonar o repositorio
 https://github.com/j0aox/Crude-with-Laravel.git
 
 Entrar no diretório que foi criado 
-cd Agenda
+cd Crude-with-Laravel
 
 Instalar Dependências
 composer install

@@ -31,10 +31,10 @@ composer install
 Alterar o arquivo 
 .env.example para .env
 
-Criar a chave do projeto
+Criar a chave para o projeto
 php artisan key:generate
 
-Rodar as migrate para criar as tabelas do banco
+Rodar as migrate para criar as tabelas da banco
 php artisan migrate
 
 Startar o projeto

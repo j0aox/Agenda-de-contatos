@@ -31,6 +31,11 @@ composer install
 Alterar o arquivo 
 .env.example para .env
 
+Mudar o arquivo .env
+Na linha 14 onde tem: DB_DATABASE=laravel
+você terá que mudar para (DB_DATABASE=crud) 
+mesmo nome da base de dados ao qual você criou no início (crud)
+
 Criar a chave para o projeto
 php artisan key:generate
 
